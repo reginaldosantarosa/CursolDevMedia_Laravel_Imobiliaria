@@ -1,8 +1,10 @@
 <div class="row section">
-	<h3 align="center">Imóveis</h3>
-	
+	<h3 align="center">Imóveis</h3>	
 	<div class="divider"></div>
+	<br>
+	@include('layouts._site._filtros')
 </div>    
+
 
 <div class="row section">
 	<div class="col s12 m3">
@@ -18,13 +20,13 @@
 				<p><b>R$2000.000,00</b> </p>
 			</div>
 
-			<div class="card-action">
-				
+			<div class="card-action">				
 				<a href="">VER MAIS...</a>
 			</div>
 		</div>
 	</div>
 
+	
 	<div class="col s12 m3">
 		<div class="card">
 			<div class="card-image"> 

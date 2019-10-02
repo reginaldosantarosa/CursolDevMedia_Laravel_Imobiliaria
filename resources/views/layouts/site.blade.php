@@ -19,8 +19,9 @@
        @include('layouts._site._nav')
    </header>
 
-        
-    @yield('content')
+   <main>        
+      @yield('content')
+   </main>
 
     <footer class="page-footer blue">
           <div class="container">
