@@ -17,13 +17,16 @@ Route::get('/',['as'=>'site.home', function () {
 }]);
 
 
-Route::get('/sobre',['as'=>'site.sobre', function () {
-    return view('site.sobre');
-}]);
+Route::post('/contato/enviar',['as'=>'site.contato.enviar', 'uses'=>'Site\PaginaController@enviarContato']);
 
-Route::get('/contato',['as'=>'site.contato', function () {
-    return view('site.contato');
-}]);
+Route::get('/contato',['as'=>'site.contato', 'uses'=>'Site\PaginaController@contato']);
+
+Route::get('/sobre',['as'=>'site.sobre', 'uses'=>'Site\PaginaController@sobre']);
+
+
+//Route::get('/contato',['as'=>'site.contato', function () {
+//    return view('site.contato');
+//}]);
 
 Route::get('/imovel/{id}/{titulo?}',['as'=>'site.imovel', function () {
     return view('site.imovel');
@@ -56,12 +59,13 @@ Route::group(['middleware'=>'auth'],function(){
             return view('admin.principal.index');
         }]);
 
+        Route::get('/admin/paginas',['as'=>'admin.paginas','uses'=>'Admin\PaginaController@index']);
+
+        Route::get('/admin/paginas/editar/{id}',['as'=>'admin.paginas.editar','uses'=>'Admin\PaginaController@editar']);
+
+        Route::put('/admin/paginas/atualizar/{id}',['as'=>'admin.paginas.atualizar','uses'=>'Admin\PaginaController@atualizar']);
 
 });
-
-
-
-
 
 //Route::auth(); retirando para nao usar rotas automaticas
 

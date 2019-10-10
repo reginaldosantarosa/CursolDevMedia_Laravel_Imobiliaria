@@ -1,7 +1,12 @@
  $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.slider').slider({full_width: true});
-    //$('select').material_select();
+     $('.dropdown-button').dropdown({
+         constrainWidth:true,
+         coverTrigger:false
+         }
+     );
+     //$('select').material_select();
     //$("#selectedTest").formSelect();
 
   });

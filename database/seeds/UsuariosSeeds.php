@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use  App\User;  //modelo de usuario criado pelo programador , representa tabela banco
+use  App\User;  //modelo de usuario criado pelo programador , representa tabela banco, ja deixa criado padrão alguns itens
 
 class UsuariosSeeds extends Seeder
 {

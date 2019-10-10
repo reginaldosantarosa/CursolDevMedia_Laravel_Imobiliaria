@@ -13,6 +13,7 @@ class UsuarioController extends Controller
     public function login(Request $request){
 
     	$dados=$request->all(); // pegando todos parametros do request
+
     	//dd($dados);     //tipo um var_dup, add um exit final
     	if(Auth::attempt(['email'=>$dados['email'],'password'=>$dados['password']])) {
     	    \Session::flash('mensagem',['msg'=>'Login relaiazado com sucesso!', 'class'=>'green wgite-text']);
