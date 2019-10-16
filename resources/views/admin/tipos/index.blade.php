@@ -1,14 +1,15 @@
 @extends('layouts.app')
+
 @section('content')
+
     <div class="container">
-            <h2 class="center">Lista de Usuários</h2>
+            <h2 class="center">Lista de Tipos</h2>
             <div class="row">
                 <nav>
                     <div class="nav-wrapper green">
                         <div class="col s12">
                             <a href="{{ route('admin.principal') }}" class="breadcrumb">Inicio</a>
-                            <a class="breadcrumb">Lista de Usuários</a>
-
+                            <a class="breadcrumb">Lista de Tipos</a>
                         </div>
                     </div>
                 </nav>
@@ -19,22 +20,20 @@
                     <thead>
                       <tr>
                           <th>Id</th>
-                          <th>Nome</th>
-                          <th>Email</th>
+                          <th>Título</th>
                           <th>Ação</th>
                       </tr>
                     </thead>
 
                     <tbody>
-                    @foreach($usuarios as $usuario)
+                    @foreach($registros as $registro)
                     <tr>
-                        <td>{{$usuario->id}}</td>
-                        <td>{{$usuario->name}}</td>
-                        <td>{{$usuario->email}}</td>
+                        <td>{{$registro->id}}</td>
+                        <td>{{$registro->titulo}}</td>
                         <td>
-                            <a class="btn orange" href=""{{route('admin.usuarios.editar',$usuario->id)}}}}>Editar </a>
+                            <a class="btn orange" href="{{route('admin.tipos.editar',$registro->id)}}">Editar </a>
                             <a class="btn red" href="javascript: if( confirm('Deteletar esse registro?')){
-                            window.location.href='{{route ('admin.usuarios.deletar',$usuario->id)}}'}">Deletar </a>
+                            window.location.href='{{route ('admin.tipos.deletar',$registro->id)}}'}">Deletar </a>
                         </td>
                     </tr>
                         @endforeach
@@ -43,7 +42,7 @@
             </div>
 
             <div class="row">
-                <a class="btn blue" href="{{route('admin.usuarios.adicionar')}}">Adicionar</a>
+                <a class="btn blue" href="{{route('admin.tipos.adicionar')}}">Adicionar</a>
             </div>
     </div>
 @endsection
