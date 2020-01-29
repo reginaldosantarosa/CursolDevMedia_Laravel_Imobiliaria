@@ -18,7 +18,9 @@
                             <li>  <a href="#">{{Auth::user()->name}} </a>  </li>
                             <li>  <a href="{{route('admin.usuarios')}}">Usuários</a>  </li>
                             <li>  <a href="{{route('admin.tipos')}}">Tipos</a>  </li>
+                            <li>  <a href="{{route('admin.imoveis')}}">Imóveis</a>  </li>
                             <li>  <a href="{{route('admin.cidades')}}">Cidades</a>  </li>
+                            <li>  <a href="{{route('admin.slides')}}">Slides</a>  </li>
                             <li>  <a href="{{route('admin.paginas')}}">Paginas</a>  </li>
                         </ul>
 
@@ -36,10 +38,19 @@
             <li><a href="{{route('admin.login')}}">Login</a></li>
         @else
             <li><a href="#">{{Auth::user()->name}}</a></li>
+            
             <li>  <a href="{{route('admin.usuarios')}}">Usuários</a>  </li>
+
+             <li>  <a href="{{route('admin.slides')}}">Slides</a>  </li>
+            
             <li>  <a href="{{route('admin.tipos')}}">Tipos</a>  </li>
+            
+            <li>  <a href="{{route('admin.imoveis')}}">Imóveis</a>  </li>
+            
             <li>  <a href="{{route('admin.cidades')}}">Cidades</a>  </li>
+
             <li>  <a href="{{route('admin.paginas')}}">Paginas</a>  </li>
+            
             <li><a href="{{route('admin.login.sair')}}">Sair</a></li>
         @endif
     </ul>
